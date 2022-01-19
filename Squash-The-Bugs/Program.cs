@@ -40,7 +40,7 @@ namespace SquashTheBugs
                 // output the calculation based on the numbers
                 //Console.WriteLine(i / (i - 1)); runtime error - this causes a divide-by-zero error
                 double DoubleI = Convert.ToDouble(i);
-                Console.WriteLine(DoubleI / (DoubleI - 1.0));
+                Console.WriteLine(Console.ReadLine());
 
             // concatenate each number to allNumbers
             //allNumbers += i + " ";
