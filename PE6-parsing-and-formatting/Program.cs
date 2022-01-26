@@ -30,7 +30,7 @@ namespace PE6_parsing_and_formatting
             Console.WriteLine(randomNumber);
 
             //asks the user for an amount of attempts, and only accepts the input if the input is valid
-            Console.Write("please enter a number of attempts to guess the number: ");
+            Console.Write("please enter a number of attempts to guess a number between 0 and 100: ");
             numAttempts = IsGoodInput(Console.ReadLine());
 
             //loop runs numAttempts times
@@ -54,7 +54,7 @@ namespace PE6_parsing_and_formatting
                 }
                 else
                 {
-                    if (currentGuess==1)
+                    if (x==1)
                     {
                         Console.WriteLine("Correct! You guessed it in one try. excellent job!.");
                         guessedCorrectly = true;
@@ -89,9 +89,9 @@ namespace PE6_parsing_and_formatting
             while(!isValid)
             {
                 isValid = int.TryParse(input, out parsedInput);
-                if (!isValid)
+                if (!isValid||parsedInput<0||parsedInput>100)
                 {
-                    Console.Write("please input a non-decimal number: ");
+                    Console.Write("please input a non-decimal number between 0 and 100: ");
                     input = Console.ReadLine();
                 }
             }
