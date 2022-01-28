@@ -14,6 +14,15 @@ namespace PE7_Mad_Libs
     {
         static void Main(string[] args)
         {
+            Console.Write("would you like to play Mad Libs? (yes/no) ");
+            string player = Console.ReadLine().ToLower();
+            player = player.Trim();
+            if (player == "no")
+            {
+                Console.WriteLine("goodbye!");
+                return;
+            }
+        start:
             //initialize number of libs, counter, and choice of lib variables, as well as the streamreader after
             int numLibs = 0;
             int counter = 0;
@@ -25,7 +34,7 @@ namespace PE7_Mad_Libs
 
             //count lines in the file(each line is madlibs story)
             string line = null;
-            while((line = input.ReadLine()) != null)
+            while ((line = input.ReadLine()) != null)
             {
                 ++numLibs;
             }
@@ -40,7 +49,7 @@ namespace PE7_Mad_Libs
             input = new StreamReader("c:/templates/MadLibsTemplate.txt");
 
             line = null;
-            while((line = input.ReadLine()) != null)
+            while ((line = input.ReadLine()) != null)
             {
                 madLibs[counter] = line;
                 madLibs[counter] = madLibs[counter].Replace("\\n", "\n");
@@ -51,11 +60,11 @@ namespace PE7_Mad_Libs
             //prompt the user for which mad lib they want to play, and store it in Choice
             Console.Write("Which Lib do you want to play? " + numLibs + " Availible: ");
             bool isValid = false;
-            while(!isValid)
+            while (!isValid)
             {
                 string unparsedChoice = Console.ReadLine();
                 isValid = int.TryParse(unparsedChoice, out Choice);
-                if (!isValid || Choice>numLibs || Choice<=0) { Console.Write("Please input a valid number between 0 and " + numLibs + ":"); isValid = false; }
+                if (!isValid || Choice > numLibs || Choice <= 0) { Console.Write("Please input a valid number between 0 and " + numLibs + ":"); isValid = false; }
             }
             --Choice;
 
@@ -72,7 +81,7 @@ namespace PE7_Mad_Libs
                     if (word.StartsWith("{"))
                     {
                         string paramWord = word.Replace('_', ' ');
-                        Console.Write("Please enter a(n) " + paramWord.Substring(1, (word.IndexOf('}')-1)) + ": ");
+                        Console.Write("Please enter a(n) " + paramWord.Substring(1, (word.IndexOf('}') - 1)) + ": ");
                         string inputWord = Console.ReadLine();
                         inputWord = inputWord.ToLower();
                         inputWord = inputWord.Trim();
@@ -87,12 +96,42 @@ namespace PE7_Mad_Libs
                 {
                     result = result + word;
                 }
-                
-                
+
+
             }
             result.Trim();
             Console.Clear();
-            Console.Write(result);
+            Console.WriteLine(result);
+
+            Console.Write("would you like to play again? ");
+            int howManyTimes = 0;
+        playAgain:
+            string playAgain = Console.ReadLine().ToLower().Trim();
+            if (playAgain == "yes")
+            {
+                goto start;
+            }
+            else if (playAgain == "no")
+            {
+                Console.WriteLine("goodbye");
+                return;
+            }
+            else
+            {
+                if (howManyTimes >= 3)
+                {
+                    Console.Write("its yes or no, you can do better than this. ");
+                    howManyTimes++;
+                    goto playAgain;
+                }
+                else
+                {
+                    Console.Write("sorry, I didn't understand that. please answer yes or no. ");
+                    howManyTimes++;
+                    goto playAgain;
+                }
+                
+            }
         }
     }
 }
