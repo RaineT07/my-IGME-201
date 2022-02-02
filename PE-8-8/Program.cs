@@ -25,6 +25,10 @@ namespace PE_8_8
                 {
                     result =result + " "+ "yes";
                 }
+                else if(word == "No")
+                {
+                    result = result + " " + "Yes";
+                }
                 else
                 {
                     result = result + " " + word;
@@ -32,7 +36,7 @@ namespace PE_8_8
 
             }
             result.Trim();
-            Console.Write(result);
+            Console.WriteLine(result);
         }
     }
 }
