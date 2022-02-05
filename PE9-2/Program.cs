@@ -7,12 +7,15 @@ using System.IO;
 using System.Timers;
 namespace PE9_2
 {
+    //author: mainly David Schuh, with additions by Raine Taber
+    //program gives a math quiz that is timed with 5 seconds for answers
+    //notes: code added by Raine taber is denoted by a comment with the letter 'R' beside it
     class Program
     {
-        //initialize timeOut flag(Raine's Code)
-        static bool timeOut = false;
+        //initialize timeOut flag
+        static bool timeOut = false; //R
         //timer for timeOut
-        static Timer timeOutTimer;
+        static Timer timeOutTimer;//R
         static void Main()
         {
             // store user name
@@ -43,10 +46,10 @@ namespace PE9_2
 
             // string and int for the response
             string sResponse = "";
-            Int32 nResponse;
+            Int32 nResponse; //R, changed from initializing as 0 to just declaring
 
             // boolean for checking valid input
-            bool bValid;
+            bool bValid; //R, changed from initializing as false, to just declaring
 
             // play again?
             string sAgain = "";
@@ -149,10 +152,10 @@ namespace PE9_2
             for (nCntr = 0; nCntr < nQuestions; ++nCntr)
             {
 
-                //set nResponse to 0 every time
+                //R: set nResponse to 0 every time the game begins
                 nResponse = 0;
 
-                //initialize bValid to false to start
+                //R: initialize bValid to false every time the game begins for a fresh game-state
                 bValid = false;
 
                 // generate a random number between 0 inclusive and 3 exclusive to get the operation
@@ -193,16 +196,16 @@ namespace PE9_2
 
 
 
-                //set the timeOut timer to 5 seconds
+                //R: set the timeOut timer to 5 seconds
                 timeOutTimer = new Timer(5000);
 
-                //declare delegate elapsedEventhandler
+                //R: declare delegate elapsedEventhandler
                 ElapsedEventHandler elapsedEventHandler;
 
-                //point the variable to the timesUp method
+                //R: point the variable to the timesUp method
                 elapsedEventHandler = new ElapsedEventHandler(TimesUp);
 
-                //add timesUp() to timeOutTimer.elapsed event handler
+                //R: add timesUp() to timeOutTimer.elapsed event handler
                 timeOutTimer.Elapsed += elapsedEventHandler;
                 timeOut = false;
 
@@ -210,7 +213,7 @@ namespace PE9_2
 
                 // display the question and prompt for the answer using sResponse and nResponse to store their response
                 timeOutTimer.Start();
-                    while (bValid == false&&!timeOut)
+                    while (bValid == false&&!timeOut) //R: while loop altered to include timeOut variable
                     {
                         Console.Write(sQuestions);
                         sResponse = Console.ReadLine();
@@ -226,7 +229,7 @@ namespace PE9_2
                             bValid = false;
                         }
                     }
-                timeOutTimer.Stop();
+                timeOutTimer.Stop(); //R
 
 
 
@@ -238,7 +241,7 @@ namespace PE9_2
 
                 // if nResponse == nAnswer, output flashy reward and increment # correct
                 // else output stark answer
-                        if (nResponse == nAnswer&&!timeOut)
+                        if (nResponse == nAnswer&&!timeOut)//R: while loop altered to include timeout
                         {
                             Console.BackgroundColor = ConsoleColor.Blue;
                             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -251,7 +254,7 @@ namespace PE9_2
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("I'm sorry {0}. The answer is {1}", myName, nAnswer);
-                        timeOut = true;
+                        timeOut = true;//R
                         }
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
@@ -289,6 +292,7 @@ namespace PE9_2
         //Method: TimesUp
         //purpose: Delegate method called when timer is expired
         //restrictions: none
+        //code written by Raine Taber
         static void TimesUp(object source, ElapsedEventArgs e)
         {
             Console.WriteLine();
