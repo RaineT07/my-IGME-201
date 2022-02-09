@@ -17,9 +17,13 @@ namespace PE9_3
         }
         static void Main(string[] args)
         {
-            InputReader userInput;
-            userInput = new InputReader(GetInput);
-            string sName = userInput();
+            double[][] dArray = new double[2][];
+            dArray[1] = new double[2];
+            dArray[2] = new double[1]
+
+            dArray[0][0] = 15;
+            dArray[1][2] = 5.67;
+
         }
     }
 }
