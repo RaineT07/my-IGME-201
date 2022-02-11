@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Unit_Test_1_1
 {
+    //Program replaces the "math quiz application" to include division.
+    //Author: Raine Taber
     class Program
     {
         static void Main(string[] args)
