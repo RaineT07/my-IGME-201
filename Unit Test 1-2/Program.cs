@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Unit_Test_1_2
 {
+    //program changes number sorter application so it sorts words instead
+    //Author: Raine Taber
     class Program
     {
         //the definition of the delegate function data type
