@@ -36,7 +36,7 @@ namespace Unit_test_1_12
 
         }
 
-        //GiveRaise: checks if the employee structure's sName is the same as the Author's name (Raine Taber) and gives them a raise if so,
+        //GiveRaise: checks if the employee name is the same as the Author's name (Raine Taber) and gives them a raise if so,
         //before returning true or false based on if the user's name is the same.
         static bool GiveRaise(string name, ref double salary)
         {
