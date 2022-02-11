@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Unit_test_1_12
+namespace Unit_test_1_13
 {
     class Program
     {
+    
         //this program prompts the user for their name, and increases their salary if their name is the same as the Author's name
         //Author: Raine Taber
 
@@ -32,11 +33,11 @@ namespace Unit_test_1_12
 
             //create an employee structure with the user's name and 30000 as the salary
             employee newEmploy = new employee(tempName, 30000);
-                        
+
             //if statement calls the giveRaise method, and then 
             //outputs wether or not the user got a raise.
 
-            if(GiveRaise(ref newEmploy))
+            if (GiveRaise(ref newEmploy))
             {
                 Console.WriteLine("Congratulations " + newEmploy.sName + ", you have earned a raise! Your new salary is: $" + newEmploy.dSalary);
             }
@@ -46,12 +47,12 @@ namespace Unit_test_1_12
             }
 
         }
-        
+
         //GiveRaise: checks if the employee structure's sName is the same as the Author's name (Raine Taber) and gives them a raise if so,
         //before returning true or false based on if the user's name is the same.
         static bool GiveRaise(ref employee e)
         {
-           if(e.sName.Equals("Raine Taber"))
+            if (e.sName.Equals("Raine Taber"))
             {
                 e.dSalary += 19999.99;
                 return true;
@@ -63,3 +64,4 @@ namespace Unit_test_1_12
         }
     }
 }
+
