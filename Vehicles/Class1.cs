@@ -12,7 +12,7 @@ namespace Vehicles
     {
         public virtual void LoadPassenger()
         {
-
+            Console.WriteLine("I am a vehicle");
         }
     }
 
@@ -28,7 +28,10 @@ namespace Vehicles
 
     public interface IPassengerCarrier
     {
-        void LoadPassenger();
+        void LoadPassenger()
+        {
+            Console.WriteLine("I am a passenger Carrier");
+        }
 
     }
 
