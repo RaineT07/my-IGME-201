@@ -36,7 +36,7 @@ namespace CourseLib
 
     public class Courses
     {
-        public SortedList<string, Course> sortedList;
+        public SortedList<string, Course> sortedList = new SortedList<string, Course>();
         public Course this[string courseCode]
         {
             get
@@ -60,26 +60,23 @@ namespace CourseLib
                 }
                 catch
                 {
-                    Console.WriteLine("there is already a course with this value");
+
                 }
             }
         }
-
         public void Remove(string courseCode)
         {
-            if(courseCode != null)
+            if (courseCode != null)
             {
                 sortedList.Remove(courseCode);
             }
         }
-
         public Courses()
         {
+            sortedList = new SortedList<string, Course>();
             Course thisCourse;
             Schedule thisSchedule;
-
             Random rand = new Random();
-
             // generate courses IGME-200 through IGME-299
             for (int i = 200; i < 300; ++i)
             {
@@ -104,16 +101,20 @@ namespace CourseLib
                         thisSchedule.startTime = new DateTime(1, 1, 1, nHour, 0, 0);
                         thisSchedule.endTime = new DateTime(1, 1, 1, nHour, 50, 0);
                     }
+
+
+                    // set the schedule for this course
+                    thisCourse.schedule = thisSchedule;
+
+                    // add this course to the SortedList
+                    this[thisCourse.courseCode] = thisCourse;
+                    
                 }
-
-                // set the schedule for this course
-                thisCourse.schedule = thisSchedule;
-
-                // add this course to the SortedList
-                this[thisCourse.courseCode] = thisCourse;
             }
         }
-
-
     }
 }
+
+
+
+
