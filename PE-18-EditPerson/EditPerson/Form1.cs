@@ -94,7 +94,7 @@ namespace EditPerson
                 None.
             */
 
-
+            this.typeComboBox.SelectedIndexChanged += new EventHandler(this.TypeComboBox__SelectedIndexChanged);
 
             /* Instructions for PE-18 - Radio Buttons and UX
              * 1. Increase the size of the form by changing:
@@ -190,7 +190,7 @@ namespace EditPerson
 
                 //if statement defaults a new person's year to senior, and if they are not new
                 //it sets the correct year on the radio button group depending on the person's year
-                if(student.eCollegeYear==null)
+                if(student.name==null)
                 {
                     seniorRadioButton.Checked = true;
                 }    

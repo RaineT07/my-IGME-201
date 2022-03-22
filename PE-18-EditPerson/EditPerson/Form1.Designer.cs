@@ -305,7 +305,7 @@
             // seniorRadioButton
             // 
             this.seniorRadioButton.AutoSize = true;
-            this.seniorRadioButton.Location = new System.Drawing.Point(10, 88);
+            this.seniorRadioButton.Location = new System.Drawing.Point(6, 88);
             this.seniorRadioButton.Name = "seniorRadioButton";
             this.seniorRadioButton.Size = new System.Drawing.Size(55, 17);
             this.seniorRadioButton.TabIndex = 14;
@@ -385,7 +385,6 @@
             this.Controls.Add(this.typeLabel);
             this.Controls.Add(this.gpaLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(842, 478);
             this.MinimizeBox = false;
