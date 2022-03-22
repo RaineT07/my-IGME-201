@@ -527,5 +527,10 @@ namespace EditPerson
         {
 
         }
+
+        private void specialtyLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

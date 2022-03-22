@@ -177,6 +177,7 @@
             this.specialtyLabel.Size = new System.Drawing.Size(70, 13);
             this.specialtyLabel.TabIndex = 5;
             this.specialtyLabel.Text = "Specialty:";
+            this.specialtyLabel.Click += new System.EventHandler(this.specialtyLabel_Click);
             // 
             // specText
             // 
@@ -189,8 +190,8 @@
             // gpaLabel
             // 
             this.gpaLabel.BackColor = System.Drawing.Color.Transparent;
-            this.gpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpaLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.gpaLabel.Font = new System.Drawing.Font("Malgun Gothic Semilight", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpaLabel.ForeColor = System.Drawing.Color.Orange;
             this.gpaLabel.Location = new System.Drawing.Point(9, 210);
             this.gpaLabel.Name = "gpaLabel";
             this.gpaLabel.Size = new System.Drawing.Size(60, 13);
