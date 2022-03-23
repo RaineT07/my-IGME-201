@@ -170,15 +170,16 @@ namespace EditPerson
             */
 
             //add event handlers for when each radio button is changed
+            /*
             this.himRadioButton.CheckedChanged += new EventHandler(ClassRadioButton__CheckedChanged);
             this.herRadioButton.CheckedChanged += new EventHandler(ClassRadioButton__CheckedChanged);
             this.themRadioButton.CheckedChanged += new EventHandler(ClassRadioButton__CheckedChanged);
-
+            */
             this.froshRadioButton.CheckedChanged += new EventHandler(ClassRadioButton__CheckedChanged);
             this.sophRadioButton.CheckedChanged += new EventHandler(ClassRadioButton__CheckedChanged);
             this.juniorRadioButton.CheckedChanged += new EventHandler(ClassRadioButton__CheckedChanged);
             this.seniorRadioButton.CheckedChanged += new EventHandler(ClassRadioButton__CheckedChanged);
-
+            
             if(person.name == null)
             {
                 themRadioButton.Checked = true;
@@ -342,6 +343,8 @@ namespace EditPerson
                 else if (sophRadioButton.Checked) { this.classOfLabel.Text = "Class of 2023"; }
                 else if (juniorRadioButton.Checked) { this.classOfLabel.Text = "Class of 2022"; }
                 else { this.classOfLabel.Text = "Class of 2021"; }
+
+                //if (himRadioButton.Checked) { this.};
             }
         }
         private void TxtBoxEmpty__TextChanged(object sender, EventArgs e)
@@ -425,6 +428,12 @@ namespace EditPerson
                 if (this.himRadioButton.Checked == true) { student.eGender = genderPronoun.him; }
                 else if (this.herRadioButton.Checked == true) { student.eGender = genderPronoun.her; }
                 else { student.eGender = genderPronoun.them; }
+
+                //check and update update college year
+                if (this.froshRadioButton.Checked == true) { student.eCollegeYear = collegeYear.freshman; }
+                else if (this.sophRadioButton.Checked == true) { student.eCollegeYear = collegeYear.sophomore; }
+                else if (this.juniorRadioButton.Checked == true) { student.eCollegeYear = collegeYear.junior; }
+                else { student.eCollegeYear = collegeYear.senior; }
             }
             else
             {
@@ -432,7 +441,7 @@ namespace EditPerson
                 //code checks which radio button is the checked one, and udpates the person's genderPronoun to reflect the radio box.
                 if (this.himRadioButton.Checked == true) { student.eGender = genderPronoun.him; }
                 else if (this.herRadioButton.Checked == true) { student.eGender = genderPronoun.her; }
-                else { student.eGender = genderPronoun.them; }
+                else { teacher.eGender = genderPronoun.them; }
             }
 
             Globals.people[person.email] = person;
