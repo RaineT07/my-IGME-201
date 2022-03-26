@@ -78,7 +78,7 @@ namespace CourseList
 
 
             // 5. disable updateButton (using the Enabled property)
-            this.courseListView.Enabled = false;
+            this.updateButton.Enabled = false;
 
             // 6. disable courseCodeTextBox
             this.courseCodeTextBox.Enabled = false;
@@ -216,7 +216,7 @@ namespace CourseList
 
                 // 36. increment our counter to alternate colors and check for nStartEl
                 ++lviCntr;
-                if (lviCntr.Equals(nStartEl)) { break; }
+                //if (lviCntr.Equals(nStartEl)) { break; }
             }
 
 
